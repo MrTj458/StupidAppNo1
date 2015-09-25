@@ -4,15 +4,25 @@ import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Button;
+import android.widget.TextView;
+import android.widget.RelativeLayout;
 
 public class StupidActivity extends ActionBarActivity
 {
+    private Button colorChangeButton;
+    private RelativeLayout background;
+    private TextView sllyWords;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_stupid);
+
+        colorChangeButton = (Button) findViewById(R.id.sillyButton);
+        background = (RelativeLayout) findViewById(R.id.appBackground);
+        sillyWords = (TextView) findViewById(R.id.appBackground);
     }
 
     @Override
