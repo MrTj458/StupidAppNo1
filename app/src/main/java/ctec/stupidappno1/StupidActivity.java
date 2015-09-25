@@ -7,12 +7,14 @@ import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.RelativeLayout;
+import android.view.View;
+import android.graphics.Color;
 
 public class StupidActivity extends ActionBarActivity
 {
     private Button colorChangeButton;
     private RelativeLayout background;
-    private TextView sllyWords;
+    private TextView sillyWords;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -22,7 +24,9 @@ public class StupidActivity extends ActionBarActivity
 
         colorChangeButton = (Button) findViewById(R.id.sillyButton);
         background = (RelativeLayout) findViewById(R.id.appBackground);
-        sillyWords = (TextView) findViewById(R.id.appBackground);
+        sillyWords = (TextView) findViewById(R.id.sillyWords);
+
+        setupListeners();
     }
 
     @Override
@@ -47,5 +51,43 @@ public class StupidActivity extends ActionBarActivity
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    private void changeColors()
+    {
+        int redColor;
+        int blueColor;
+        int greenColor;
+
+        redColor = (int) (Math.random() * 256);
+        blueColor = (int) (Math.random() * 256);
+        greenColor = (int) (Math.random() * 256);
+
+        background.setBackgroundColor(Color.rgb(redColor, blueColor, greenColor));
+
+        redColor = (int) (Math.random() * 256);
+        blueColor = (int) (Math.random() * 256);
+        greenColor = (int) (Math.random() * 56);
+
+        colorChangeButton.setBackgroundColor(Color.rgb(redColor, blueColor, greenColor));
+
+        redColor = (int) (Math.random() * 256);
+        blueColor = (int) (Math.random() * 256);
+        greenColor = (int) (Math.random() * 256);
+
+        colorChangeButton.setTextColor(Color.rgb(redColor, blueColor, greenColor));
+    }
+
+    private void setupListeners()
+    {
+        colorChangeButton.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View buttonView)
+            {
+                //This is where you put the code that executes when the button is pressed.
+                changeColors();
+            }
+        });
     }
 }
