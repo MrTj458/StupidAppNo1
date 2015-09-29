@@ -9,7 +9,8 @@
     <TextView android:text="@string/silliness" android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/sillyWords"
-        android:textSize="45dp" />
+        android:textSize="45dp"
+        android:visibility="visible" />
 
     <Button
         android:layout_width="wrap_content"

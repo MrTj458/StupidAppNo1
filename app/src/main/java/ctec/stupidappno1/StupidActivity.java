@@ -78,6 +78,18 @@ public class StupidActivity extends ActionBarActivity
         colorChangeButton.setTextColor(Color.rgb(redColor, blueColor, greenColor));
     }
 
+    private void changeVisibility()
+    {
+        if(sillyWords.getVisibility() == View.GONE)
+        {
+            sillyWords.setVisibility(View.VISIBLE);
+        }
+        else
+        {
+            sillyWords.setVisibility(View.GONE);
+        }
+    }
+
     private void setupListeners()
     {
         colorChangeButton.setOnClickListener(new View.OnClickListener()
@@ -87,6 +99,7 @@ public class StupidActivity extends ActionBarActivity
             {
                 //This is where you put the code that executes when the button is pressed.
                 changeColors();
+                changeVisibility();
             }
         });
     }
